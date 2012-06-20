@@ -1,0 +1,13 @@
+#summary One-sentence summary of this page.
+
+= Introduction =
+
+wifi-bluetooth-comm 功能
+
+= Details =
+
+功能清单:
+  * 支持WIFI通讯
+  * 支持Bluetooth通讯
+  * 支持自动连接
+　* 支持自定义通讯协议
