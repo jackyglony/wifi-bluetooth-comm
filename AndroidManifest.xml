@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ecarinfo"
+    android:versionCode="1"
+    android:versionName="1.0" >
+    <uses-sdk android:minSdkVersion="8" />
+    
+    <!-- 蓝牙权限 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+	
+	<!-- 访问网络权限 -->
+	<uses-permission android:name="android.permission.INTERNET" />
+	
+	<!-- Needed to check when the network connection changes -->
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/> 
+	
+	<!-- WIFI管理 -->
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>   
+    <uses-permission android:name="android.permission.ACCESS_CHECKIN_PROPERTIES"/>   
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>   
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>   
+    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE"/>  
+    <uses-permission android:name="android.permission.UPDATE_DEVICE_STATS"/>
+
+    <application
+        android:name="com.simple.MyApplication"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name" >
+        <activity
+            android:name="com.simple.MainActivity"
+            android:label="@string/app_name" 
+            android:configChanges="orientation|keyboardHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+		<!-- 服务 -->
+        <service android:name=".device.service.BluetoothService"/>
+        <service android:name="com.simple.device.service.WifiService"/>
+        
+    </application>
+</manifest>
